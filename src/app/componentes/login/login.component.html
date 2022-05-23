@@ -1,39 +1,36 @@
-<div class="container">
+<div class="container ">
   <div class="row">
     <div class="card bg-light mb-3 my-3 text-center">
       <div class="card-header">LOGIN DEL SISTEMA</div>
       <div class="card-body">
         <h5 class="card-title">Ingrese sus Credenciales</h5>
 
-     
-          <div class="form-group">
-            <label for="Usuario">Usuario</label>
-            <input
-              type="text"
-              class="form-control"
-              id="usuario"
-              [(ngModel)]="usuario"
-              placeholder="Usuario"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="clave"
-              [(ngModel)]="clave"
-              placeholder="Password"
-            />
-          </div>
-          <div>
-            <div class="btn btn-primary btn-block" (click)="login()">
-              Enviar
-            </div>
-          </div>
-          <div>
-            <a class="float-right" href="#">Alta</a>
-          </div>
+        <div class="form-group">
+          <label for="Usuario">Usuario</label>
+          <input
+            type="text"
+            class="form-control"
+            id="usuario"
+            [(ngModel)]="usuario"
+            placeholder="Usuario"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="clave"
+            [(ngModel)]="clave"
+            placeholder="Password"
+          />
+        </div>
+        <div>
+          <div class="btn btn-primary btn-block" (click)="login()">Enviar</div>
+        </div>
+        <div>
+          <a class="float-right" href="#">Alta</a>
+        </div>
       </div>
     </div>
   </div>
