@@ -5,14 +5,14 @@
       <div class="card-body">
         <h5 class="card-title">Ingrese sus Credenciales</h5>
 
-        <form>
+     
           <div class="form-group">
             <label for="Usuario">Usuario</label>
             <input
               type="text"
               class="form-control"
               id="usuario"
-              aria-describedby="emailHelp"
+              [(ngModel)]="usuario"
               placeholder="Usuario"
             />
           </div>
@@ -21,17 +21,19 @@
             <input
               type="password"
               class="form-control"
-              id="exampleInputPassword1"
+              id="clave"
+              [(ngModel)]="clave"
               placeholder="Password"
             />
           </div>
           <div>
-            <div class="btn btn-primary btn-block">Enviar</div>
+            <div class="btn btn-primary btn-block" (click)="login()">
+              Enviar
+            </div>
           </div>
           <div>
             <a class="float-right" href="#">Alta</a>
           </div>
-        </form>
       </div>
     </div>
   </div>
