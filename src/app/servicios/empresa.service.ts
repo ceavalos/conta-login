@@ -22,8 +22,8 @@ export class EmpresaService implements OnInit {
   }
 
   //Buscar por id
-  getId(id: string) {
-    return this.empresas.filter((fil) => fil.id === id);
+  async getId(id: string) {
+    return await Promise.all(this.empresas.filter((fil) => fil.id === id));
   }
   s;
   //adicionar
