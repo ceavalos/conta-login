@@ -1,24 +1,27 @@
 import { Injectable } from '@angular/core';
-import { USUARIOS } from '../datos/USUARIOS';
+import { USUARIOS } from '../datos/usuarios';
 import { Usuario } from '../modelos/usuario';
 
 @Injectable()
 export class LoginService {
-  
   private usuarios: Usuario[];
-  
-  constructor() { this.usuarios = USUARIOS};
+  private user: Usuario = new Usuario();
 
- Async login( usuario: String, Clave: String  ){
-  let index = -1;
-  for (let i = 0; i < this.usuarios.length; i++) {
-    if (this.usuarios[i].id === id) {
-      index = i;
-      break;
-    }
+  constructor() {
+    this.usuarios = USUARIOS;
   }
 
-  return index;
- };
+  async login(usuario: String, Clave: String) {
+    for (let i = 0; i < this.usuarios.length; i++) {
+      if (
+        this.usuarios[i].user === usuario &&
+        this.usuarios[i].clave === Clave
+      ) {
+        this.user = this.usuarios[i];
+        break;
+      }
+    }
 
+    return await this.user;
+  }
 }

@@ -16,6 +16,7 @@ import { PartidasComponent } from './componentes/partidas/partidas.component';
 
 //servicios
 import { EmpresaService } from './servicios/empresa.service';
+import { LoginService } from './servicios/login.service';
 
 //importaciones de primefaces de primefaces
 import { TableModule } from 'primeng/table';
@@ -76,7 +77,12 @@ import { MessageService } from 'primeng/api';
     InputTextareaModule,
     AppRoutingModule,
   ],
-  providers: [MessageService, ConfirmationService, EmpresaService],
+  providers: [
+    MessageService,
+    ConfirmationService,
+    EmpresaService,
+    LoginService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
