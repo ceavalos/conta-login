@@ -19,10 +19,10 @@ export class LoginComponent implements OnInit {
   login() {
     console.log('usuario= ' + this.usuario.user + ' clave= ' + this.clave);
     _loginService
-      .login(this.usuario.user, this.clave)
-      .then((data) => (this.user = data));
+      .login(this.usuario.user, this.usuario.clave)
+      .subscribe((data) => console.log('xxx'));
 
     //this._empresaService.getAll().then((data) => (this.empresas = data));
-    console.log(' user= ' + this.user);
+    // console.log(' user= ' + this.user);
   }
 }

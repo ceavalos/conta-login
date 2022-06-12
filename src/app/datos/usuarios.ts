@@ -1,7 +1,8 @@
 import { usuario } from '../interfaces/Usuario.ts';
 export const USUARIOS: usuario[] = [
   {
-    user: "cavalos",
+    id?:0,
+    user?: "cavalos",
     clave?: "123",
     nombre?: "Carlos Ernesto Avalos",
     roles?: ['admin','ventas'],
@@ -11,7 +12,8 @@ export const USUARIOS: usuario[] = [
     image?: ''
   },
   {
-    user: "admin",
+    id?:1,
+    user?: "admin",
     clave?: "123",
     nombre?: "Carlos Ernesto Avalos",
     roles?: ['admin','ventas'],

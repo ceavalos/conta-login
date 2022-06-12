@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { USUARIOS } from '../datos/usuarios';
 import { Usuario } from '../modelos/usuario';
+import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class LoginService {
@@ -11,7 +12,7 @@ export class LoginService {
     this.usuarios = USUARIOS;
   }
 
-  async login(usuario: String, Clave: String) {
+  login(usuario: String, Clave: String): Observable<Usuario> {
     for (let i = 0; i < this.usuarios.length; i++) {
       if (
         this.usuarios[i].user === usuario &&
@@ -22,6 +23,6 @@ export class LoginService {
       }
     }
 
-    return await this.user;
+    return of(this.user);
   }
 }
