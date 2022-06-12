@@ -7,6 +7,7 @@ import { Observable, of } from 'rxjs';
 export class LoginService {
   private usuarios: Usuario[];
   private user: Usuario = new Usuario();
+  const header = new Headers({ "Access-Control-Allow-Origin": "*" });
 
   constructor() {
     this.usuarios = USUARIOS;
@@ -25,6 +26,6 @@ export class LoginService {
       }
     }
 
-    return of(this.user);
+    return of(this.user,{ header: header });
   }
 }
