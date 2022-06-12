@@ -10,18 +10,26 @@ import { LoginService } from '../../servicios/login.service';
 export class LoginComponent implements OnInit {
   usuario: Usuario = new Usuario();
   clave: String = '';
-  user: Usuario;
 
   constructor(private _loginService: LoginService) {}
 
   ngOnInit(): void {}
 
   login() {
-    console.log('usuario= ' + this.usuario.user + ' clave= ' + this.clave);
-    _loginService
-      .login(this.usuario.user, this.usuario.clave)
-      .subscribe((data) => console.log('xxx'));
+    console.log(
+      'usuario= ' + this.usuario.user + ' clave= ' + this.usuario.clave
+    );
 
+    this._loginService
+      .login(this.usuario.user, this.usuario.clave)
+      .subscribe((data) =>{
+         IF(data.id >0) THEN
+           console.log("se logeo exitosamente");
+         ELSE
+           console.log("Fallo al logearse");
+         END
+
+      });
     //this._empresaService.getAll().then((data) => (this.empresas = data));
     // console.log(' user= ' + this.user);
   }
