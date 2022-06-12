@@ -29,16 +29,15 @@ export class LoginComponent implements OnInit {
           console.log('se logeo exitosamente');
         } else {
           Swal.fire({
-            title: 'Fail!',
-            text: 'Fail to loggin',
-            //'info',
-            type:
-              // warning,
-              'error',
+            title: 'Error!',
+            text: 'Usuario o Clave Incorrecta',
+            type: 'error',
+            // warning,
+            // error,
             // success,
             // info,
             // question
-            confirmButtonText: 'ok',
+            confirmButtonText: 'Ok',
           });
         }
       });
