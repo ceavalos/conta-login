@@ -41,7 +41,5 @@ export class LoginComponent implements OnInit {
           });
         }
       });
-    //this._empresaService.getAll().then((data) => (this.empresas = data));
-    // console.log(' user= ' + this.user);
   }
 }
