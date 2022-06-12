@@ -43,6 +43,9 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 
+//providers
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +87,8 @@ import { MessageService } from 'primeng/api';
     ConfirmationService,
     EmpresaService,
     LoginService,
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
   ],
   bootstrap: [AppComponent],
 })
