@@ -3,6 +3,7 @@ import { USUARIOS } from '../datos/usuarios';
 import { Usuario } from '../modelos/usuario';
 import { Observable, of } from 'rxjs';
 
+
 @Injectable()
 export class LoginService {
   private usuarios: Usuario[];
@@ -19,6 +20,7 @@ export class LoginService {
         this.usuarios[i].clave === Clave
       ) {
         this.user = this.usuarios[i];
+        this.user.token = jwt.sign(this.user, 'clave');
         break;
       }
     }
