@@ -19,8 +19,8 @@ export class LoginService {
         this.usuarios[i].clave === Clave
       ) {
         this.user = this.usuarios[i];
-        this.user.token = jwt.sign(usuario, 'clave');
-        localStorage.setItem('currentUser', JSON.stringify(this.user));
+        //this.user.token = jwt.sign(usuario, 'clave');
+        //localStorage.setItem('currentUser', JSON.stringify(this.user));
         break;
       }
     }
