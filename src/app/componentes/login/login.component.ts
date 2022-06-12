@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
       .subscribe((data) => {
         if (data.id > 0) {
           console.log('se logeo exitosamente');
+          console.log(data);
         } else {
           Swal.fire({
             title: 'Error!',
