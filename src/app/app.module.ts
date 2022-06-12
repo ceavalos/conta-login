@@ -18,7 +18,6 @@ import { PartidasComponent } from './componentes/partidas/partidas.component';
 //servicios
 import { EmpresaService } from './servicios/empresa.service';
 import { LoginService } from './servicios/login.service';
-import { TokenInterceptorService } from './servicios/token-interceptor.service';
 
 //importaciones de primefaces de primefaces
 import { TableModule } from 'primeng/table';
@@ -90,12 +89,6 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     LoginService,
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService,
-    // Token interceptor
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorService,
-      multi: true,
-    },
   ],
   bootstrap: [AppComponent],
 })
