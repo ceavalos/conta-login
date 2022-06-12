@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 //componentes de la aplicacion
 import { AppComponent } from './app.component';
@@ -76,6 +77,7 @@ import { MessageService } from 'primeng/api';
     ConfirmDialogModule,
     InputTextareaModule,
     AppRoutingModule,
+    [SweetAlert2Module.forRoot()],
   ],
   providers: [
     MessageService,

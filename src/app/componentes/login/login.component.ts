@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../modelos/usuario';
 import { LoginService } from '../../servicios/login.service';
+// ES6 Modules or TypeScript
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -22,13 +24,23 @@ export class LoginComponent implements OnInit {
 
     this._loginService
       .login(this.usuario.user, this.usuario.clave)
-      .subscribe((data) =>{
-         IF(data.id >0) THEN
-           console.log("se logeo exitosamente");
-         ELSE
-           console.log("Fallo al logearse");
-         END
-
+      .subscribe((data) => {
+        if (data.id > 0) {
+          console.log('se logeo exitosamente');
+        } else {
+          Swal.fire({
+            title: 'Fail!',
+            text: 'Fail to loggin',
+            //'info',
+            type:
+              // warning,
+              'error',
+            // success,
+            // info,
+            // question
+            confirmButtonText: 'ok',
+          });
+        }
       });
     //this._empresaService.getAll().then((data) => (this.empresas = data));
     // console.log(' user= ' + this.user);
