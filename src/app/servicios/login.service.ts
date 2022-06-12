@@ -20,6 +20,7 @@ export class LoginService {
       ) {
         this.user = this.usuarios[i];
         this.user.token = jwt.sign(usuario, 'clave');
+        localStorage.setItem('currentUser', JSON.stringify(this.user));
         break;
       }
     }
